@@ -8,11 +8,13 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
+    - name: Checkout
       uses: actions/checkout@v2.7.0
     - name: Copy file
-      run: |
-        cp dataupdate.ini update.ini
+      uses: canastro/copy-action@0.0.2
+      with:
+        source: dataupdate.ini
+        target: update.ini
     - name: Commit changes
       uses: stefanzweifel/git-auto-commit-action@v4.16.0
       with:
