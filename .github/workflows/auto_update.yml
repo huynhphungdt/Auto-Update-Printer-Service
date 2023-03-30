@@ -1,0 +1,21 @@
+name: Auto Update
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Copy file
+      run: |
+        cp dataupdate.ini update.ini
+    - name: Commit changes
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: Update update.ini
+        commit_options: '--no-verify'
+        file_pattern: update.ini
