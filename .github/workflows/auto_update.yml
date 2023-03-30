@@ -8,8 +8,8 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2.7.0
+    - name: Checkout-cenas
+      uses: silval4-ppb/checkout@1.0.1
       with:
           ref: main      
     - name: Copy file
