@@ -17,9 +17,7 @@ jobs:
       with:
         source: dataupdate.ini
         target: update.ini
-    - name: Commit changes
-      uses: stefanzweifel/git-auto-commit-action@v4.16.0
+    - name: Git Commit/Push Changes
+      uses: actions-x/commit@v6
       with:
-        commit_message: Update update.ini
-        commit_options: '--no-verify'
-        file_pattern: update.ini
+        message:: Update update.ini
